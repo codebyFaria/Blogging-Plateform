@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+
+
+body{
+    background-color: white;
+}
+/* button{
+    color: white;
+} */
+
+/* button:hover{
+    color: black;
+    background-color: white;
+} */
+
+.logo{
+    width: 20%;
+}
+.logo img{
+    width: 100%;
+}
