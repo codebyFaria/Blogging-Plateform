@@ -28,8 +28,8 @@ function Signup() {
     }
 
   return (
-    <div className="flex items-center justify-center">
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+    <div className="flex px-[20px] items-center justify-center">
+            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl px-[20px] pb-5 sm:p-10 border border-black/10`}>
             <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
@@ -52,6 +52,7 @@ function Signup() {
                         <Input
                         label="Full Name: "
                         placeholder="Enter your full name"
+                        required = {true}
                         {...register("name", {
                             required: true,
                         })}
@@ -59,6 +60,7 @@ function Signup() {
                         <Input
                         label="Email: "
                         placeholder="Enter your email"
+                        required = {true}
                         type="email"
                         {...register("email", {
                             required: true,
@@ -71,6 +73,7 @@ function Signup() {
                         <Input
                         label="Password: "
                         type="password"
+                        required = {true}
                         placeholder="Enter your password"
                         {...register("password", {
                             required: true,})}

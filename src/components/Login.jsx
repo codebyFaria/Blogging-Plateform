@@ -34,7 +34,7 @@ const login =async(data)=>{
     <div
     className='flex items-center justify-center w-full '
     >
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+        <div className={` w-full max-w-lg bg-gray-100 rounded-xl p-5 sm:p-10 border border-black/10`}>
         <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
@@ -57,6 +57,7 @@ const login =async(data)=>{
                 label="Email: "
                 placeholder="Enter your email"
                 type="email"
+                required = {true}
                 {...register("email", {
                     required: true,
                     validate: {
@@ -68,6 +69,7 @@ const login =async(data)=>{
                 <Input
                 label="Password: "
                 type="password"
+                required = {true}
                 placeholder="Enter your password"
                 {...register("password", {
                     required: true,

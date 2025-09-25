@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import services from "../Appwrite/config";
-import {container, PostCard} from '../components/index'
-import {useSelector} from 'react-redux'
+import { Button, container, PostCard } from '../components/index'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 
 
 function Home() {
     const [posts, setPosts] = useState([])
-    const userData = useSelector((state)=>state.auth.userData)
+    const userData = useSelector((state) => state.auth.userData)
 
     useEffect(() => {
         services.getPosts().then((posts) => {
@@ -16,22 +16,27 @@ function Home() {
             }
         })
     }, [])
-  
+
 
     if (userData === null) {
-          return (
-            <div className="w-full h-[60vh] py-8 bg-white flex items-center justify-center">
-                <container>
-                    <div className="flex flex-wrap">
-                        <div className="p-2 w-full">
-                            <Link to="/login" >
-                                <h1 className="text-2xl font-bold mb-4">
-                                    Please login to read posts
-                                </h1>
-                            </Link>
-                        </div>
-                    </div>
-                </container>
+        return (
+            <div className="relative w-full h-[100vh] flex items-center justify-center">
+                {/* Background image */}
+                <div className="absolute inset-0 bg-[url('../blog-imag.jpg')] bg-cover bg-center"></div>
+
+                {/* Black overlay */}
+                <div className="absolute inset-0 bg-black/55"></div>
+
+                {/* Content */}
+                <div className="relative mx-auto z-10 w-full max-w-full text-center text-white">
+                    <h1 className="text-4xl sm:text-5xl font-bold mb-4">Welcome to Blogging Platform</h1>
+                    <p className="mb-8 text-2xl">Discover amazing articles and insights from our community.</p>
+                    <Link to="/login">
+                        <button className="px-8 py-3 cursor-pointer text-lg font-semibold text-black bg-white rounded-full border-2 shadow-lg  hover:bg-black hover:text-white transition-all duration-300 ease-in-out">
+                            Please login to read posts
+                        </button>
+                    </Link>
+                </div>
             </div>
         )
     }

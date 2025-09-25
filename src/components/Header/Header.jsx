@@ -39,7 +39,7 @@ function Header() {
 
 
   return (
-    <header className="pt-3 shadow bg-green-900 text-white">
+    <header className="pt-3 shadow bg-black text-white">
       <container>
         <nav className="flex items-center justify-between">
           {/* Logo */}
